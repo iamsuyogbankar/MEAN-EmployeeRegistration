@@ -1,0 +1,21 @@
+.container-fluid{
+    /* background-image: url('../../assets/images/3.jpg'); */
+    background-color: beige;
+}
+.home{
+    margin-left: 201px
+}
+.emp{
+    margin-left: 201px;
+}
+.empty{
+    margin-left: 200px;
+}
+.form-control, .btn{
+    border-radius:30px;
+}
+
+.card-header{
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+}

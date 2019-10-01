@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12 mt-5">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 mx-auto mt-5 p-2">
+                <div class="card">
+                    <div class="card-header text-center text-uppercase">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit(loginForm.value)">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter Email Id</label>
+                                            <input type="email" name="email" class="form-control" id="email" placeholder=" Enter Email Id" 
+                                            formControlName="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter Password</label>
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter password Id" 
+                                            formControlName="password">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mt-5">
+                                        <button class="btn btn-success btn-block">Login</button>
+                                    </div>
+                                    
+                                    <div class="col-md-6 mt-5">
+                                        <button class="btn btn-danger btn-block" routerLink="/signup">Go for Registration</button>
+                                    </div>
+                                </div>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

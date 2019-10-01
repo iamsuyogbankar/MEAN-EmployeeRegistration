@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12 mx-auto mt-3 p-2">
+                <div class="card">
+                    <div class="card-header text-center text-uppercase">
+                        <h4>Manager Registration</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <form [formGroup]="signupForm" (ngSubmit)="onSignupSubmit(signupForm.value)" >
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter FirsName</label>
+                                            <input type="fname" name="fname" class="form-control" id="fname" placeholder=" Enter first name" 
+                                            formControlName="fname" required>
+
+                                            <div class="" *ngIf="signupForm.controls['fname'].touched">
+                                                <span style="color: red;" *ngIf="signupForm.controls['fname'].hasError('required')">
+                                                    <span>*</span> Your FirstName is Required
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter LastName</label>
+                                            <input type="lname" name="lname" class="form-control" id="lname" placeholder=" Enter last name" 
+                                            formControlName="lname" required>
+                                            <div class="" *ngIf="signupForm.controls['lname'].touched">
+                                                <span style="color: red;" *ngIf="signupForm.controls['lname'].hasError('required')">
+                                                    <span>*</span> Your LastName is Required
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter Email Id</label>
+                                            <input type="email" name="email" class="form-control" id="email" placeholder=" Enter Email" 
+                                            formControlName="email" required>
+                                            <div class="" *ngIf="signupForm.controls['email'].touched">
+                                                <span style="color: red;" *ngIf="signupForm.controls['email'].hasError('required')">
+                                                    <span>*</span> Your Email Id is Required
+                                                </span>
+                                                <span style="color: red;" *ngIf="signupForm.controls['email'].hasError('pattern')">
+                                                    <span>*</span> Invalid Pattern(eg.abc@gmail.com)
+                                                </span>
+                                                </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter Date of Birth</label>
+                                            <input type="date" name="dob" class="form-control" id="dob" placeholder="Enter date of brith" 
+                                            formControlName="dob" required>
+                                            <div class="" *ngIf="signupForm.controls['dob'].touched">
+                                                <span style="color: red;" *ngIf="signupForm.controls['dob'].hasError('required')">
+                                                    <span>*</span> Your Date of Birth is Required
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">  
+                                        <div class="form-group">
+                                            <label for="">Enter Password</label>
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" 
+                                            formControlName="password" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Confirm Password</label>
+                                            <input type="password" name="confirmpassword" class="form-control" id="confirmpassword" placeholder="Enter confirm password" 
+                                            formControlName="confirmpassword" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter Company Name</label>
+                                            <input type="company" name="company" class="form-control" id="company" placeholder="Enter company Name" 
+                                            formControlName="company" required>
+                                            <div class="" *ngIf="signupForm.controls['company'].touched">
+                                                <span style="color: red;" *ngIf="signupForm.controls['company'].hasError('required')">
+                                                    <span>*</span> Your Company Name is Required
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Enter Address</label>
+                                            <textarea name="address" cols="53" rows="3" class="form-control" id="address" placeholder="Enter Address" formControlName="address"></textarea>  
+                                            <div class="" *ngIf="signupForm.controls['address'].touched">
+                                                <span style="color: red;" *ngIf="signupForm.controls['address'].hasError('required')">
+                                                    <span>*</span> Your Address is Required
+                                                </span>
+                                            </div>                                 
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 button">
+                                        <button type="submit" class="btn btn-success btn-md mt-5 mr-2" [disabled]="!signupForm.dirty">Register</button>
+                                        <button type="submit" class="btn btn-danger btn-md mt-5" routerLink="/">Already Registered? Go for Login</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

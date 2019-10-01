@@ -1,0 +1,12 @@
+.form-control, .btn{
+    border-radius:30px;
+}
+
+.card-header{
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+}
+
+.button{
+    margin-left: 188px;
+}
