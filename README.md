@@ -1,5 +1,5 @@
 # Employee Registration using MEAN(Mongo,Express,Angular,Node.js)
-# Steps to run projet
+# Steps to run project
   - git clone this repository url
   - npm install in angular project
   - npm install in database folder
