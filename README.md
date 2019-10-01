@@ -8,7 +8,7 @@
  # To run Angular Project
   - ng serve
   
- # To run node.js
+ # To run Node.js
   - nodemon index.js / node index.js
   
   # Project Description
