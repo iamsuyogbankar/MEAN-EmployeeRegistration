@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-screen',
@@ -12,9 +14,11 @@ export class HomeScreenComponent implements OnInit {
   updateEmployeeForm: FormGroup;
   public employees:any = [];
   public updateEmployee:any = [];
+  public getRegisteredUser:any = [];
   public confirm; 
   public confirmUpdate;
-  constructor(private fb: FormBuilder, private employeeService: EmployeeService){
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService,
+    private authService: AuthService, private router: Router){
       this.employeeForm = this.fb.group({
       empid: ['', [Validators.required]],
       firstname: ['', [Validators.required]],
@@ -40,6 +44,15 @@ export class HomeScreenComponent implements OnInit {
       this.employees = res;
       console.log(this.employees);
     });
+
+    //get all Registered User
+    this.authService.getRegisteredUser().subscribe((res) => {
+      this.getRegisteredUser = res;
+      console.log('getRegisteredUser',this.getRegisteredUser);
+    });
+
+    //get logged In user stored in LocalStorage
+    console.log(JSON.parse(localStorage.getItem('user')));
   }
   // save employee
   onSaveEmployee(){
@@ -79,5 +92,11 @@ export class HomeScreenComponent implements OnInit {
     else{
       return false;
     }
+  }
+
+  //Logout by Manager
+  onLogoutManager(){
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }

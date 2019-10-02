@@ -15,18 +15,23 @@ constructor(private http: HttpClient) { }
 
 //Register User
 saveUser(formvalues){
-  return this.http.post(this.baseUrl+'/register', formvalues)
+  return this.http.post(this.baseUrl+'/register', formvalues);
+}
+
+//Get Registered User
+getRegisteredUser(){
+  return this.http.get(this.baseUrl);
 }
 
 // Attempts to Log in
 signInUser(formValues){
-  return this.http.post(this.baseUrl+'/signin', formValues)
+  return this.http.post(this.baseUrl+'/signin', formValues);
 }
 
 // Save auth Details
 saveAuthDetails(token, user){
   localStorage.setItem('token', token);
-  localStorage.setItem('user', JSON.stringify(user))
+  localStorage.setItem('user', JSON.stringify(user));
   this.authtoken = token;
   this.authUser = user;
 }

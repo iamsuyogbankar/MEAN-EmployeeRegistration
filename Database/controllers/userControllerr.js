@@ -31,4 +31,13 @@ router.post('/register', (req,res) => {
     })
 })
 
+//get Registered User
+router.get('/', (req,res) => {
+    User.find((err, docs) => {
+        if(!err){
+            res.send(docs);
+        }
+    });
+});
+
 module.exports = router
