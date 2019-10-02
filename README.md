@@ -4,6 +4,7 @@
   - npm install in angular project
   - npm install in database folder
   - npm install nodemon g --save
+  - git pull(If want to get new changes from github)
   
  # To run Angular Project
   - ng serve
